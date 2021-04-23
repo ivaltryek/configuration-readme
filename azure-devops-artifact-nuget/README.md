@@ -45,6 +45,8 @@ In,  `<add key="ClearTextPassword" value="<Personal Access Token>" />`the value 
 
 ### Command
 
+    nuget push -Source "<Feedname>" -ApiKey az <Package-name>.nupkg
+
     nuget push -Source "online-ordering-artifacts" -ApiKey az FTXCore.Services.Identity.Integration.1.1.1.nupkg
 
 
