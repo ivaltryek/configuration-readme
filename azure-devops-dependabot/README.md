@@ -22,7 +22,7 @@ Steps:
 
 #### azure-pipeline-config.yml
 
-``` 
+```yaml 
 pool:
   vmImage: 'Ubuntu-16.04'
 
@@ -58,7 +58,7 @@ steps:
 ```
 
 #### Gemfile
-``` 
+```gemfile 
 # frozen_string_literal: true
 ruby "2.6.7"
 source "https://rubygems.org"
@@ -69,7 +69,7 @@ gem "dependabot-omnibus", "~> 0.138.1"
 
 #### update.rb
 
-```
+```ruby
 require "dependabot/omnibus"
 
 package_manager = "npm_and_yarn"
@@ -202,7 +202,7 @@ Visit: [https://github.com/dependabot/dependabot-script](https://github.com/depe
 
 Need to make changes for these lines:
 
-```
+```ruby
 package_manager = "npm_and_yarn" 
 repo = "myabilities/PitchAI/_git/PitchAI-Portal"
 ```
