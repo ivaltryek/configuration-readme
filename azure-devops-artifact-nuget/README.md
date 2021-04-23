@@ -14,7 +14,7 @@
 	<packageSourceCredentials>
 		<online-ordering-artifacts>
 			<add key="Username" value="meet.vasani@ftxinfotech.com" />
-			<add key="ClearTextPassword" value="df7fxk37rzguwqpitbyb7ercjuo4jhd6fnmx3alzuvsgvjxgczzq" />
+			<add key="ClearTextPassword" value="<Personal Access Token>" />
 		</online-ordering-artifacts>
 	</packageSourceCredentials>
 
@@ -23,7 +23,7 @@
 
 ```
 
-In,  `<add key="ClearTextPassword" value="df7fxk37rzguwqpitbyb7ercjuo4jhd6fnmx3alzuvsgvjxgczzq" />`the value needs to be changes every 90 days. Basically, value is PAT created from Azure devops account.
+In,  `<add key="ClearTextPassword" value="<Personal Access Token>" />`the value needs to be changes every 90 days. Basically, value is PAT created from Azure devops account.
 
 ## Packaging the nupkg
 
