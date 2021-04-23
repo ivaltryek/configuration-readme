@@ -75,4 +75,5 @@ A. ```nuget sources Add -Name "MySource" -Source <url>```
 	Here ```"MySource"``` is the feed name and  ```<url>``` is the artifact feed url.
 	
 Example
-	```nuget sources Add -Name "online-ordering-artifacts" -Source https://pkgs.dev.azure.com/ftxinfotech/_packaging/online-ordering-artifacts/nuget/v3/index.json```
+
+```nuget sources Add -Name "online-ordering-artifacts" -Source https://pkgs.dev.azure.com/ftxinfotech/_packaging/online-ordering-artifacts/nuget/v3/index.json```
