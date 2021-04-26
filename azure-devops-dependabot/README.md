@@ -194,6 +194,8 @@ cp -r $(bundle show dependabot-npm_and_yarn)/helpers $DEPENDABOT_NATIVE_HELPERS_
 $DEPENDABOT_NATIVE_HELPERS_PATH/npm_and_yarn/helpers/build $DEPENDABOT_NATIVE_HELPERS_PATH/npm_and_yarn
 
 ```
+#### Note
+> For nuget package manager, there is no need to perform the above helper step. Dependabot provides nuget helpers internally.
 
 To see, different commands for the different package managers: 
 Visit: [https://github.com/dependabot/dependabot-script](https://github.com/dependabot/dependabot-script) , and check the readme of the repo
