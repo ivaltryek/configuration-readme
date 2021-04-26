@@ -13,7 +13,7 @@
 
 	<packageSourceCredentials>
 		<online-ordering-artifacts>
-			<add key="Username" value="meet.vasani@ftxinfotech.com" />
+			<add key="Username" value="<Usually Azure Devops Account Email Address>" />
 			<add key="ClearTextPassword" value="<Personal Access Token>" />
 		</online-ordering-artifacts>
 	</packageSourceCredentials>
