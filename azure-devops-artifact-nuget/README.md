@@ -63,6 +63,11 @@ You'll see something like this at the end of the command process
   Accepted https://pkgs.dev.azure.com/ftxinfotech/_packaging/4400b28f-d2bd-432d-b34d-62ae3d519c6b/nuget/v2/ 5347ms
 Your package was pushed.
 
+## Restore Packages from Azure DevOps Artifacts
+
+#### Command
+> Run this command at the root of the project where the .csproj file or package.config exists.
+``` nuget restore ```
 
 ## Common Problems
 
