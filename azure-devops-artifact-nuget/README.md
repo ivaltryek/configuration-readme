@@ -83,3 +83,7 @@ A. ```nuget sources Add -Name "MySource" -Source <url>```
 Example
 
 ```nuget sources Add -Name "online-ordering-artifacts" -Source https://pkgs.dev.azure.com/ftxinfotech/_packaging/online-ordering-artifacts/nuget/v3/index.json```
+
+
+ Q. Getting 401 Unauthorized while restoring artifacts.
+ A. This may occure if you're restoring packages with ```dotnet restore```. Please try restoring using the ```nuget restore```.
