@@ -23,6 +23,12 @@ Steps:
 #### azure-pipeline-config.yml
 
 ```yaml 
+trigger:
+  branches:
+    include:
+      - security
+
+
 pool:
   vmImage: 'Ubuntu-16.04'
 
@@ -55,6 +61,7 @@ steps:
   displayName: 'Update dependencies'
 
 
+
 ```
 
 #### Gemfile
@@ -72,33 +79,38 @@ gem "dependabot-omnibus", "~> 0.138.1"
 ```ruby
 require "dependabot/omnibus"
 
-package_manager = "npm_and_yarn"
+package_manager = "nuget"
 repo = "<organization>/<project-name>/_git/<repository-name>" # For google/doodle/_git/doodle_repo
+branch = "<branchname>" # Target Branch of PR 
 
 credentials = [{
   "type" => "git_source",
   "host" => "dev.azure.com",
-  "username" => "",
-  "password" => ENV["SYSTEM_ACCESSTOKEN"]
+  "username" => "x-access-token",
+  "password" => "<PAT TOKEN>"
 },
 
 {
   "type" => "git_source",
   "host" => "github.com",
   "username" => "x-access-token",
-  "password" => "<github-token>" # A GitHub access token with read access to public repos
+  "password" => "<GITHUB TOKEN>" # A GitHub access token with read access to public repos
 },
 
 {
-  "type" => "<package_manager>_feed", # for ex: nuget - nuget_feed, npm_and_yarm - npm_and_yarn_feed
-  "url" => "<azure-artifact-feed-url>", 
-  # for ex: https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/nuget/v3/index.json
+  "type" => "nuget_feed",
+  "url" => "https://myabilities.pkgs.visualstudio.com/Pillar/_packaging/Pillar-modules/nuget/v3/index.json",
   "token" => ":#{ENV["SYSTEM_ACCESSTOKEN"]}"
-}]
+}
+
+]
 
 source = Dependabot::Source.new(
   provider: "azure",
   repo: repo,
+  hostname: "dev.azure.com",
+  api_endpoint: "https://dev.azure.com/",
+  branch: branch
 )
 
 fetcher = Dependabot::FileFetchers.for_package_manager(package_manager).new(
