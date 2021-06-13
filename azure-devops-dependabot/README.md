@@ -99,7 +99,9 @@ credentials = [{
 
 {
   "type" => "nuget_feed",
-  "url" => "https://myabilities.pkgs.visualstudio.com/Pillar/_packaging/Pillar-modules/nuget/v3/index.json",
+  # _feed is postfix, just change the package manger that you're using
+  
+  "url" => "https://dev.azure.com/<opg>/<project>/_packaging/<feed-name>/<package-manager>/v3/index.json",
   "token" => ":#{ENV["SYSTEM_ACCESSTOKEN"]}"
 }
 
