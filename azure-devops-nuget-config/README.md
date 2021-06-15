@@ -49,7 +49,7 @@ In,  `<add key="ClearTextPassword" value="<Personal Access Token>" />`the value 
     
    
    #### Example
-   ``` nuget push -Source "online-ordering-artifacts" -ApiKey az FTXCore.Services.Identity.Integration.1.1.1.```
+   ``` nuget push -Source "online-ordering-artifacts" -ApiKey az FTXCore.Services.Identity.Integration.1.1.1.nupkg```
    
 
 You should open the cmd where is your current package is or the other way, provide the absolute path of the package.
