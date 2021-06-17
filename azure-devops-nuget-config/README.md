@@ -7,15 +7,15 @@
 <configuration>
 	<packageSources>
 		<clear />
-		<add key="online-ordering-artifacts" value="https://pkgs.dev.azure.com/ftxinfotech/_packaging/online-ordering-artifacts/nuget/v3/index.json" />
+		<add key="artifact-feed-name" value="https://pkgs.dev.azure.com/<organization>/_packaging/<artifact-feed-name>/nuget/v3/index.json" />
 		<add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
 	</packageSources>
 
 	<packageSourceCredentials>
-		<online-ordering-artifacts>
+		<artifact-feed-name>
 			<add key="Username" value="<Usually Azure Devops Account Email Address>" />
 			<add key="ClearTextPassword" value="<Personal Access Token>" />
-		</online-ordering-artifacts>
+		</artifact-feed-name>
 	</packageSourceCredentials>
 
 </configuration>
