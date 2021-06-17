@@ -23,7 +23,8 @@
 
 ```
 
-In,  ```xml <add key="ClearTextPassword" value="<Personal Access Token>" />```the value needs to be changed every 90 days. Basically, value is PAT created from Azure devops account.
+In,  ```xml 
+<add key="ClearTextPassword" value="<Personal Access Token>" />```the value needs to be changed every 90 days. Basically, value is PAT created from Azure devops account.
 
 ## Packaging the nupkg
 
