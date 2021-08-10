@@ -60,4 +60,87 @@
 
 - Once the pods are in running state, open the URL that is configured in ingress to Explore Vault UI.
 
-    <img src="./assets/vault01.png">
+    > Select Create new Raft Cluster and click next
+
+
+   <img src="./assets/vault01.png">
+
+
+- For the demonstration purpose, I've kept Key shares and threshold to 1
+  
+  <img src="./assets/vault02.png">
+
+
+- Download the keys, Those keys will help us to unseal the vault
+  
+  <img src="./assets/vault03.png">
+
+
+- Pass the key with the base64 in the input box.
+  
+  <img src="./assets/vault04.png">
+
+
+- Now login with the token that is given in the key file, it is named as "root_token"
+  
+  <img src="./assets/vault05.png">
+
+- Enable KV engine to store Key Value paired secrets.
+  
+  <img src="./assets/vault06.png">
+
+- Select KV and Click Next
+  
+  <img src="./assets/vault07.png">
+
+- Click on Enable Engine
+  
+  <img src="./assets/vault08.png">
+
+- Now that the engine is enabled, create some secrets to store
+  
+  <img src="./assets/vault09.png">
+
+  <img src="./assets/vault10.png">
+
+  > Click on Save
+
+- Now that the sample secrets are created, to integrate with Kubernetes we need to enable it. Which can be done in Authentication Methods
+  
+  <img src="./assets/vault11.png">
+
+- Select Kubernetes 
+  
+  <img src="./assets/vault12.png">
+  
+  > Click on Next
+
+- Enable Authentication method
+  
+  <img src="./assets/vault13.png">
+
+- Add required details to configure kubernetes
+  - Kubernetes host
+
+    ```bash
+    echo "https://$( kubectl exec vault-0 -- env | grep KUBERNETES_PORT_443_TCP_ADDR| cut -f2 -d'='):443"    
+    ```
+    > Enter the output in the input box
+
+  - Kubernetes CA Certificate 
+
+    ```bash
+    kubectl exec vault-0 -- cat /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    ``` 
+
+    > Enter the output in the input box and make sure toggle the enter as text.
+
+  - Token Reviewer JWT 
+
+    ```bash
+    echo $(kubectl exec vault-0 -- cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+    ```
+
+    > Enter the output in the input box and select save
+
+    
