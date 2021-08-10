@@ -143,4 +143,52 @@
 
     > Enter the output in the input box and select save
 
-    
+- Now that most of configuration is done, last step is that we need to create ACL Policies
+
+  <img src="./assets/vault14.png">
+
+    ```json
+   # Read the configuration secret
+    path "secret/data/devwebapp/config" {
+        capabilities = ["read"]
+    }
+   ```
+
+   > Copy this into policy field and select create policy.
+
+   <img src="./assets/vault15.png">
+
+
+- Update the Kubernetes authentication method and add roles.
+    <img src="./assets/vault16.png"> 
+
+    Create new role
+
+    <img src="./assets/vault17.png">
+
+- Add the new role
+    - You need to create service account in the kubernetes and attach it in **Bound Service account name** and also provide the namespace of that service account in **Bound service account namespaces**. 
+
+    - To create the service role:
+
+        ```bash
+        kubectl apply -f -<<EOF 
+        apiVersion: v1
+        kind: ServiceAccount
+        metadata:
+        namespace: vault
+        name: internal-app
+        EOF
+        ```
+    - Also **Don't Forget to add Generated Token's Policies in Token Section**.
+
+    - Add the **webappacl**  which was created in Access Policy early in the guide.
+
+## Here Vault Setup is completely done. To Inject vault agent in Kubernetes deployment please check the following references:
+---
+
+## Agent Sidecar Injector
+https://www.vaultproject.io/docs/platform/k8s/injector
+
+## Agent Sidecar Annotations
+https://www.vaultproject.io/docs/platform/k8s/injector/annotations
