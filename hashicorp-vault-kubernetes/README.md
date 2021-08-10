@@ -156,7 +156,6 @@
 
    > Copy this into policy field and select create policy.
 
-   <img src="./assets/vault15.png">
 
 
 - Update the Kubernetes authentication method and add roles.
