@@ -181,7 +181,7 @@
         ```
     - Also **Don't Forget to add Generated Token's Policies in Token Section**.
 
-    - Add the **webappacl**  which was created in Access Policy early in the guide.
+    - Add the **ACL Policy Name**  which was created in Access Policy early in the guide.
 
 ## Here Vault Setup is completely done. To Inject vault agent in Kubernetes deployment please check the following references:
 ---
