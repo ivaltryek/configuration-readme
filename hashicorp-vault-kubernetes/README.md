@@ -60,4 +60,4 @@
 
 - Once the pods are in running state, open the URL that is configured in ingress to Explore Vault UI.
 
-<img src="https://i.imgur.com/7GQq68L.png"></img>
+    <img src="./assets/vault01.png">
