@@ -147,7 +147,7 @@
 
   <img src="./assets/vault14.png">
 
-    ```json
+    ```
    # Read the configuration secret
     path "secret/data/devwebapp/config" {
         capabilities = ["read"]
