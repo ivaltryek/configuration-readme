@@ -149,7 +149,7 @@
 
     ```
    # Read the configuration secret
-    path "secret/data/devwebapp/config" {
+    path "kv/data/webapp/creds" {
         capabilities = ["read"]
     }
    ```
