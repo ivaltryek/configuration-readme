@@ -35,7 +35,7 @@
     - Also note the highlighted area **Show assistant**, From here you can select various task for your needs. (i.e docker, ECR Pull or Push etc.)
     <img src="./assets/ci-review.png">
 
-### 🏁 At this point CI Pipeline configuration is done. For how to create pipleines as per your needs you may have to look up the examples.
+### 🏁 At this point CI Pipeline configuration is done. For how to create pipelines as per your needs you may have to look up the examples.
 
 <hr />
 
@@ -106,4 +106,4 @@
     <img src="./assets/cd-task-three-three.png"> 
 
 
-### 🏁 At this point CD Pipeline configuration is done. For how to create pipleines as per your needs you may have to look up the examples.
+### 🏁 At this point CD Pipeline configuration is done. For how to create pipelines as per your needs you may have to look up the examples.
