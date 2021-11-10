@@ -135,10 +135,10 @@ metadata:
     app: controlcenter
     env: Production
   name: ingress-controlcenter
-  namespace: ns-bs4
+  namespace: ns-prod
 spec:
   rules:
-  - host: '*.cc.bs4.fastraxpos.com'
+  - host: '*.example.com'
     http:
       paths:
       - backend:
@@ -148,7 +148,7 @@ spec:
         pathType: Prefix
   tls:
   - hosts:
-    - '*.cc.bs4.fastraxpos.com'
+    - '*.example.com'
     secretName: cluster-controlcenter # Secret name, Value of acme.privateKeySecretRef.name in ClusterIssuer YAML Configuration file
 
 ```

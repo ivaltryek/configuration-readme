@@ -1815,10 +1815,10 @@ hue-6-2: #e6c07b
     <span class="hljs-attr">app:</span> <span class="hljs-string">controlcenter</span>
     <span class="hljs-attr">env:</span> <span class="hljs-string">Production</span>
   <span class="hljs-attr">name:</span> <span class="hljs-string">ingress-controlcenter</span>
-  <span class="hljs-attr">namespace:</span> <span class="hljs-string">ns-bs4</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">ns-prod</span>
 <span class="hljs-attr">spec:</span>
   <span class="hljs-attr">rules:</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">'*.cc.bs4.fastraxpos.com'</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">host:</span> <span class="hljs-string">'*.example.com'</span>
     <span class="hljs-attr">http:</span>
       <span class="hljs-attr">paths:</span>
       <span class="hljs-bullet">-</span> <span class="hljs-attr">backend:</span>
@@ -1828,7 +1828,7 @@ hue-6-2: #e6c07b
         <span class="hljs-attr">pathType:</span> <span class="hljs-string">Prefix</span>
   <span class="hljs-attr">tls:</span>
   <span class="hljs-bullet">-</span> <span class="hljs-attr">hosts:</span>
-    <span class="hljs-bullet">-</span> <span class="hljs-string">'*.cc.bs4.fastraxpos.com'</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">'*.example.com'</span>
     <span class="hljs-attr">secretName:</span> <span class="hljs-string">cluster-controlcenter</span> <span class="hljs-comment"># Secret name, Value of acme.privateKeySecretRef.name in ClusterIssuer YAML Configuration file</span>
 
 </div></code></pre>
