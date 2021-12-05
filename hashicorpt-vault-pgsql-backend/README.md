@@ -7,25 +7,13 @@
   # Create separate namespace for the Postgresql installation.
   kubectl create ns ns-pgsql
 
-  # Add the helm repo to instll Postgresql.
-  helm repo add bitnami https://charts.bitnami.com/bitnami
-  helm repo update
+  # I'm using kubegres operator for installation of Postgresql. Run the following commands to install kubegres operator.
+  kubectl apply -f https://raw.githubusercontent.com/reactive-tech/kubegres/v1.13/kubegres.yaml
+  kubectl apply -f ./pgsqlsecret.yml
+  kubectl apply -f ./pgsql.yml
 
-  # Install the helm chart.
-  helm install postgresql bitnami/postgresql -n ns-pgsql
-
-  #Now that the postgresql is successfully installed, let's make the DB for out vault and tables as per hashicorp docs. For more: https://www.vaultproject.io/docs/configuration/storage/postgresql
-
-  # You can get the DB Password for the Postgresql pod. Make sure to replace the namespace name if you have named it differently,
-  export POSTGRES_PASSWORD=$(kubectl get secret --namespace ns-pgsql postgresql -o jsonpath="{.data.postgresql-password}" | base64 --decode)
-
-  # To create DB, You'll have to connect to the pod either running port-forward utility or run the following command: This will run the pgsql client to interact with the the PGSQL server.
-  kubectl run postgresql-client --rm --tty -i --restart='Never' --namespace ns-pgsql --image docker.io/bitnami/postgresql:11.14.0-debian-10-r0 --env="PGPASSWORD=$POSTGRES_PASSWORD" --command -- psql --host postgresql -U postgres -d postgres -p 5432
-
-  # To connect with the DB again, you may have to delete pod and re-run the above command again. Optionally, here's the command for port-forwarding.
-kubectl port-forward --namespace ns-pgsql svc/postgresql 5432:5432 & PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
-
-# Now that you've connected to the server, you may have postgres=# cmd opened in your terminal.
+ # Now to create DB, you'll have to connect master pod, which is usually named  `1` in the pod name.
+ # Exec into the pod and run the following commands. 
 
 # Create the DB to store the secrets, this is totally optional, by default you can use postgres DB which is created by server.
 
