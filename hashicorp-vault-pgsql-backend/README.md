@@ -121,7 +121,7 @@ kubectl create ns ns-vault
         cluster_address = "[::]:8201"
       }
       storage "postgresql" {
-        connection_url="postgres://postgres:74744gfgd@postgresql.ns-pgsql.svc.cluster.local:5432/vault?sslmode=disable",
+        connection_url="postgres://postgres:74744gfgd@postgres.ns-pgsql.svc.cluster.local:5432/vault?sslmode=disable",
         table="vault_kv_store",
         ha_enabled=true,
         ha_table="vault_ha_locks"
