@@ -17,6 +17,12 @@
 
 # Create the DB to store the secrets, this is totally optional, by default you can use postgres DB which is created by server.
 
+# Exec into one of the pgsql pod
+kubectl exec -ti pgsql-1 -- bash
+
+# Login into the DB
+PGPASSWORD=<your-pgsql-password> psql -U postgres
+
 # Run the following query to create the DB.
 CREATE DATABASE vault;
 
