@@ -1,2 +1,5 @@
 *.py linguist-detectable=false
 *.md linguist-detectable=true
+*.md linguist-vendored=true
+*.md linguist-documentation=true
+*.md linguist-generated=true
