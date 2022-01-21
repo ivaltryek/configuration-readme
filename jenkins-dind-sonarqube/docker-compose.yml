@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+  sonarqube:
+    image: sonarqube:lts
+    ports:
+      - 32565:9000
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_logs:/opt/sonarqube/logs
+      - sonarqube_extensions:/opt/sonarqube/extensions
+    networks:
+      - jenkins_network
+
+  jenkins:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4083:8080
+      - 50000:50000
+    networks:
+      - jenkins_network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - jenkins_home:/var/jenkins_home
+
+volumes:
+  sonarqube_data:
+  sonarqube_logs:
+  sonarqube_extensions:
+  jenkins_home:
+networks:
+  jenkins_network:
