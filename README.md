@@ -22,7 +22,7 @@ These guides includes Kubernetes Configuration, Helm charts configuration and mu
 7. [Istio w/ EKS](https://github.com/meet86/configuration-readme/blob/main/istio-eks-setup/README.md)
 <hr>
 
-#### Docker
+#### Docker Configuration READMEs
 1. [Django with Gunicorn and NGINX](https://github.com/meet86/configuration-readme/tree/main/django-docker-gunicorn-nginx)
 2. [Docker in Docker Jenkins](https://github.com/meet86/configuration-readme/tree/main/jenkins-dind)
 3. [Jenkins and SonarQube w/ DotNet Core Example](https://github.com/meet86/configuration-readme/tree/main/jenkins-dind-sonarqube-dotnet-core)
