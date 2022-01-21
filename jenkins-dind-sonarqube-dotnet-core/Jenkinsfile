@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage("SonarQube Analysis") {
+          steps {
+            withSonarQubeEnv("SonarQube") {
+              sh """ 
+                # Export path of dotnet sonarscanner tool in order to use it globally.
+                export PATH=$PATH:$HOME/.dotnet/tools
+                dotnet sonarscanner begin /k:"<project-name>" /d:sonar.host.url="<sonarqube-url>"  /d:sonar.login="<secret-key>"
+                dotnet build CloudAccelerator.sln
+                dotnet sonarscanner end /d:sonar.login="<secret-key>"
+                 """
+            }
+          }
+        }
+
+        stage("init") {
+          when {
+            expression {
+              return env.GIT_BRANCH == "origin/branch1"
+            }
+		} 
+            steps {
+             	sh """
+                	#docker-compose up -d --build
+                """
+            }
+        }
+    }
+}

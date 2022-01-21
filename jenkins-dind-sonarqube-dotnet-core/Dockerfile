@@ -11,5 +11,6 @@ RUN wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod
     apt-get update && \
     apt-get install -y dotnet-sdk-3.1
 
+RUN dotnet tool install --global dotnet-sonarscanner
 
 RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
