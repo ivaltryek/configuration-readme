@@ -14,6 +14,7 @@
   dotnet test  /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
   ```
   ```/p:CollectCoverage=true``` - Collects Code Coverage
+
   ```/p:CoverletOutputFormat=opencover``` - Creates an XML opencover file
 
 - Install .NET SonarScanner Plugin
@@ -24,9 +25,21 @@
   ```bash
   dotnet sonarscanner begin /k:"<project-name>" /d:sonar.host.url="<sonarqube-server-url>"  /d:sonar.login="<project-key>" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**/**Test*.cs"
   ```
+  ```project-name``` - Project Name
+
+  ```sonarqube-server-url``` - SonarQube Server URL
+
+  ```project-key``` - Onetime Available while creating Project in SonarQube Dashboard.
+
+  ```/d:sonar.cs.opencover.reportsPaths``` - Path to an XML reports generated in ```dotnet test``` step.
+  
+  ```/d:sonar.coverage.exclusions``` - Exclude Test cases in code coverage.
+  
+
   > ℹ️ If you get the error that says tool not found, please add the path. Run the following command:
   ```bash
   export PATH=$PATH:$HOME/.dotnet/tools
+  ```
   ```
 
 - Build the Project
