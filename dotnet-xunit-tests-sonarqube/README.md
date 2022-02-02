@@ -40,7 +40,6 @@
   ```bash
   export PATH=$PATH:$HOME/.dotnet/tools
   ```
-  ```
 
 - Build the Project
   ```bash
