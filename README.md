@@ -27,3 +27,4 @@ These guides includes Kubernetes Configuration, Helm charts configuration and mu
 2. [Docker in Docker Jenkins](https://github.com/meet86/configuration-readme/tree/main/jenkins-dind)
 3. [Jenkins and SonarQube w/ DotNet Core Example](https://github.com/meet86/configuration-readme/tree/main/jenkins-dind-sonarqube-dotnet-core)
 4. [SonarQube w/ Dotnet Test project (xUnit)](https://github.com/meet86/configuration-readme/tree/main/dotnet-xunit-tests-sonarqube)
+5. [Selenium w/ Dotnet Test Project](https://github.com/meet86/configuration-readme/tree/main/dotnet-selenium-jenkins-dind)
