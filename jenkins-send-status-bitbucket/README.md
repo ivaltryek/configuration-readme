@@ -50,9 +50,13 @@ pipeline {
     }
     
     post {
-        always {
+        success {
            // Pass your Jenkins Username and Password ID in credentialsId where have you stored the Oauth details.
            bitbucketStatusNotify(buildState: 'SUCCESSFUL', credentialsId: 'oauth-test')
+        }
+        failure {
+           // Pass your Jenkins Username and Password ID in credentialsId where have you stored the Oauth details.
+           bitbucketStatusNotify(buildState: 'FAILED', credentialsId: 'oauth-test')
         }
     }
 }
