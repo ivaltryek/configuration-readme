@@ -20,6 +20,7 @@ These guides includes Kubernetes Configuration, Helm charts configuration and mu
 5. [Hashicorp Vault](https://github.com/meet86/configuration-readme/blob/main/hashicorp-vault-kubernetes/README.md)
 6. [Hashicorp Vault with pgSQL backend](https://github.com/meet86/configuration-readme/tree/main/hashicorp-vault-pgsql-backend)
 7. [Istio w/ EKS](https://github.com/meet86/configuration-readme/blob/main/istio-eks-setup/README.md)
+8. [Karpenter AutoScaler](https://github.com/meet86/configuration-readme/blob/main/karpenter-autoscaler-eks/README.md)
 <hr>
 
 #### Docker Configuration READMEs
