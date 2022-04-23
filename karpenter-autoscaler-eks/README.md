@@ -66,5 +66,5 @@ spec:
     # The security group of an instance is comparable to a set of firewall rules.
     # Security groups may be specified by any AWS tag, including “Name”. Selecting tags using wildcards ("*") is supported.
     securityGroupSelector:
-      Name: eks-cluster-sg-dev-eps-eks-926010192
+      Name: eks-cluster-sg-2232
 ```
