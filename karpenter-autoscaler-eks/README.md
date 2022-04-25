@@ -68,3 +68,24 @@ spec:
     securityGroupSelector:
       Name: eks-cluster-sg-2232
 ```
+
+## Provisioner with Custom Launch Templates
+
+By default, Karpenter generates launch templates with the following features:
+
+  - EKS Optimized AMI for nodes.
+  - Encrypted EBS root volumes with the default (AWS managed) KMS key for nodes.
+
+If these features are not sufficient for your use case (customizing node image, customizing EBS KMS key, etc), you need a custom launch template.
+
+*An Example of Provisioner with Custom launch templates*
+
+```yaml
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+spec:
+  provider:
+    launchTemplate: KarpenterCustomLaunchTemplate
+    subnetSelector:
+      karpenter.sh/discovery: CLUSTER_NAME
+```
