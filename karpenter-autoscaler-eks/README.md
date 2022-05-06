@@ -78,6 +78,20 @@ By default, Karpenter generates launch templates with the following features:
 
 If these features are not sufficient for your use case (customizing node image, customizing EBS KMS key, etc), you need a custom launch template.
 
+*Things to Note while creating the Launch template:*
+  - Make sure to select AMI based on EKS version and select EKS optimised image. To find which image to use visit this [link](https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html)
+
+  - Enter the following user data in the launch template:
+
+  - To get parameter values run this command: `aws eks describe-cluster --name MyKarpenterCluster`
+  ```bash
+  #!/bin/bash -xe
+  exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+  /etc/eks/bootstrap.sh '<cluster-name>' --apiserver-endpoint '<api-server-endpoint>' --b64-cluster-ca '<certificate-authority>' 
+  --container-runtime containerd 
+  --kubelet-extra-args '--node-labels=karpenter.sh/provisioner-name=default,createdby=karpenter,provisioner=default,karpenter.sh/capacity-type=on-demand'
+  ```
+
 *An Example of Provisioner with Custom launch templates*
 
 ```yaml
