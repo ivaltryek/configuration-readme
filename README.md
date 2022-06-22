@@ -35,6 +35,8 @@ These guides includes Kubernetes Configuration, Helm charts configuration and mu
 1. [Get unavailable machines in Octopus](https://github.com/meet86/configuration-readme/blob/main/octopus-get-unhealthy-machines/README.md)
 2. [Octopus Deploy Subscriptions with Slack Notifications](https://github.com/meet86/configuration-readme/blob/main/octopus-lambda-slack-notification/README.md)
 
+<hr>
+
 #### Miscellaneous
 1. [Send Build Status from Jenkins to Bitbucket](https://github.com/meet86/configuration-readme/blob/main/jenkins-send-status-bitbucket/README.md)
    
