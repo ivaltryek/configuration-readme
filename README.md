@@ -31,6 +31,10 @@ These guides includes Kubernetes Configuration, Helm charts configuration and mu
 5. [Jenkins and Selenium w/ Dotnet Test Project](https://github.com/meet86/configuration-readme/tree/main/dotnet-selenium-jenkins-dind)
 <hr>
 
+#### Octopus Deploy
+1. [Get unavailable machines in Octopus](https://github.com/meet86/configuration-readme/blob/main/octopus-get-unhealthy-machines/README.md)
+2. [Octopus Deploy Subscriptions with Slack Notifications](https://github.com/meet86/configuration-readme/blob/main/octopus-lambda-slack-notification/README.md)
+
 #### Miscellaneous
 1. [Send Build Status from Jenkins to Bitbucket](https://github.com/meet86/configuration-readme/blob/main/jenkins-send-status-bitbucket/README.md)
-2. [Get unavailable machines in Octopus](https://github.com/meet86/configuration-readme/blob/main/octopus-get-unhealthy-machines/README.md)
+   
