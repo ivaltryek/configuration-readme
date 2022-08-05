@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: demo-app
+        image: ghcr.io/meet86/pycolors:sha-1eb7c9c
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: db-auth
+          mountPath: /mnt/secrets-store
+          readOnly: true
+      serviceAccountName: sa-demo
+      volumes:
+      - name: db-auth
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: db-auth
+
